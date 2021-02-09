@@ -48,6 +48,7 @@ public class TestSysteme {
 			assertEquals(sys.current(), p1);
 	}
 
+	// > si current est null, alors last est null et waiting est vide.
 	@Test
 	public void testCurrent() throws ErreurSysteme {
 		if (sys.isCurrent(null)) {
@@ -55,6 +56,7 @@ public class TestSysteme {
 		}
 	}
 
+	// > current n'appartient jamais à waiting
 	@Test
 	public void testWaiting() throws ErreurSysteme {
 		if(!sys.isCurrent(null)){
@@ -63,6 +65,7 @@ public class TestSysteme {
 		
 	}
 
+	// > Si last est non null, il fait partie de la collection waiting et est différent de current.
 	@Test
 	public void testLast() throws ErreurSysteme {
 		sys.add(p1);
@@ -82,6 +85,12 @@ public class TestSysteme {
 	public void testAddOneProc() throws ErreurSysteme {
 		sys.add(p1);
 		assertTrue(sys.isCurrent(p1));
+	}
+
+	@Test(expected = ErreurSysteme.class)
+	public void testNoProcessusWaiting() throws ErreurSysteme{
+		sys.add(p1);
+		sys.swap();
 	}
 	
 
