@@ -29,14 +29,14 @@
 	     */
 	
 	    /* Test qui doit se terminer sans levee d'exception */
-	    @Test public void test1() { 
+	    @Test public void initialisationSystemeEtProcs() { 
 	    
 	    	sys = new Systeme();
 	    	p1 = new Processus("proc1");
-	    	p1 = new Processus("proc2");
-	    	p1 = new Processus("proc3");
-	    	p1 = new Processus("proc4");
-	    	p1 = new Processus("proc5");
+	    	p2 = new Processus("proc2");
+	    	p3 = new Processus("proc3");
+	    	p4 = new Processus("proc4");
+	    	p5 = new Processus("proc5");
 	    	
 	    	sys.init();
 	    	
@@ -45,12 +45,10 @@
 
 	    /* Test dont l'excution doit lever l'exception indiquee. */
 	    @Test(expected=ErreurSysteme.class)
-	    public void test2() throws ErreurSysteme {
+	    public void testAddOneProc() throws ErreurSysteme {
 	    	
-	    	assertTrue(sys.current().equals(null));
 	    	sys.add(p1);
-	    	assertTrue(sys.current().equals(p1));
-	    	
+	    	assertEquals(sys.current(),p1);
 	    }
 
 
