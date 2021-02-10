@@ -102,7 +102,10 @@ public class TestSysteme {
 		sys.add(p1);
 		sys.swap();
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 045180eedb5dac2cc855c48d0c2cf16bf4d42bc9
 
 	/*
 	 * À la sortie de swap ce n’est plus le processus actuel qui dispose de la

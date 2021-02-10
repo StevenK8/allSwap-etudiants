@@ -102,7 +102,6 @@ public class TestSysteme {
 		sys.add(p1);
 		sys.swap();
 	}
-	
 
 	/*
 	 * À la sortie de swap ce n’est plus le processus actuel qui dispose de la
