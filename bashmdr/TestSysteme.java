@@ -149,6 +149,13 @@ public class TestSysteme {
 	}
 
 	@Test
+	public void testInit() throws ErreurSysteme {
+		sys.add(p1);
+		sys.init();
+		assertTrue(sys.isCurrent(null));
+	}
+
+	@Test
 	public void testWaiting2() throws ErreurSysteme {
 		try {
 			sys.add(p1);
